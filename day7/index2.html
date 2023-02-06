@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+</head>
+<body>    
+      
+    <form>  
+        <div id="container">   
+           
+            <input id = "username" type="text" placeholder="username" required> <br><br> 
+            
+            <input id = "password" type="text"  placeholder="password" required><br><br>   
+            <button onclick="validate()" id="btn">register</button> <br>  
+            <a href="#" onclick="redirect()">back </a>   
+        </div>   
+    </form>     
+</body>  
+<script>
+document.body.style.backgroundColor = "mediumseagreen";
+var form= document.getElementById("container");
+form.style.padding="5px"
+form.style.width="40%";
+form.style.marginTop = "12%";
+form.style.marginLeft="30%";
+form.style.border= "4px solid white";
+form.style.backgroundColor="white";
+form.style.borderWidth="50px";
+form.style.Height="100px";
+
+var btn=document.getElementById("btn");
+btn.style.marginTop="20px"
+btn.style.backgroundColor="limegreen";
+btn.style.width="350px";
+btn.style.height="50px";
+btn.style.color="white";
+
+var username=document.getElementById("username");
+username.style.marginTop="20px"
+username.style.width="350px";
+username.style.height="50px";
+
+var password=document.getElementById("password");
+password.style.marginTop="20px"
+password.style.width="350px";
+password.style.height="50px";
+function redirect(){
+    window.location = "index.html";
+}
+</script>
+</html>
