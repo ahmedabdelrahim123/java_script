@@ -4,6 +4,7 @@ body {
   .container {
     width: 500px;
     margin: 20px auto;
+    margin-top: 20%;
   }
   .form {
     background-color: #eee;
@@ -18,12 +19,10 @@ body {
     border-radius: 6px;
     flex: 1;
   }
-  .input:focus {
-    outline: none;
-  }
+  
   .add {
     border: none;
-    background-color: #f44336;
+    background-color:green;
     color: white;
     padding: 10px;
     border-radius: 6px;
@@ -47,12 +46,8 @@ body {
     cursor: pointer;
     border: 1px solid #ccc;
   }
-  .tasks .task:not(:last-child) {
-    margin-bottom: 15px;
-  }
-  .tasks .task:hover {
-    background-color: #f7f7f7;
-  }
+
+
   .tasks .task.done {
     opacity: 0.5;
   }
