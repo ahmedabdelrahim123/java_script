@@ -5,13 +5,7 @@ let tasksDiv = document.querySelector(".tasks");
 // Empty Array To Store The Tasks
 let arrayOfTasks = [];
 
-// Check if Theres Tasks In Local Storage
-if (localStorage.getItem("tasks")) {
-  arrayOfTasks = JSON.parse(localStorage.getItem("tasks"));
-}
 
-// Trigger Get Data From Local Storage Function
-getDataFromLocalStorage();
 
 // Add Task
 submit.onclick = function () {
@@ -50,8 +44,7 @@ function addTaskToArray(taskText) {
   arrayOfTasks.push(task);
   // Add Tasks To Page
   addElementsToPageFrom(arrayOfTasks);
-  // Add Tasks To Local Storage
-  addDataToLocalStorageFrom(arrayOfTasks);
+
 }
 
 function addElementsToPageFrom(arrayOfTasks) {
@@ -79,17 +72,7 @@ function addElementsToPageFrom(arrayOfTasks) {
   });
 }
 
-function addDataToLocalStorageFrom(arrayOfTasks) {
-  window.localStorage.setItem("tasks", JSON.stringify(arrayOfTasks));
-}
 
-function getDataFromLocalStorage() {
-  let data = window.localStorage.getItem("tasks");
-  if (data) {
-    let tasks = JSON.parse(data);
-    addElementsToPageFrom(tasks);
-  }
-}
 
 function deleteTaskWith(taskId) {
   // For Explain Only
@@ -97,7 +80,7 @@ function deleteTaskWith(taskId) {
   //   console.log(`${arrayOfTasks[i].id} === ${taskId}`);
   // }
   arrayOfTasks = arrayOfTasks.filter((task) => task.id != taskId);
-  addDataToLocalStorageFrom(arrayOfTasks);
+  
 }
 
 function toggleStatusTaskWith(taskId) {
@@ -106,5 +89,5 @@ function toggleStatusTaskWith(taskId) {
       arrayOfTasks[i].completed == false ? (arrayOfTasks[i].completed = true) : (arrayOfTasks[i].completed = false);
     }
   }
-  addDataToLocalStorageFrom(arrayOfTasks);
+ 
 }
